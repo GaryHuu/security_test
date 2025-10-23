@@ -1,1 +1,1 @@
-console.log("SECURITY CHECK")
+console.log("SECURITY CHECK");
