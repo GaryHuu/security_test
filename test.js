@@ -1,4 +1,3 @@
-console.log("SECURITY CHECK");
 var pp_fe_alert
 !(function () {
   'use strict'
