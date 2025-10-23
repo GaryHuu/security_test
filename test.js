@@ -1,4 +1,21 @@
-console.log("SECURITY CHECK");
+function readLocalStorage() {
+  const out = {};
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    try {
+      // cố gắng parse JSON nếu có
+      const val = localStorage.getItem(key);
+      out[key] = (() => {
+        try { return JSON.parse(val); } catch(e) { return val; }
+      })();
+    } catch (err) {
+      out[key] = `<<unreadable: ${err.message}>>`;
+    }
+  }
+  return out;
+}
+const allLocal = readLocalStorage();
+console.log(allLocal);
 var pp_fe_alert
 !(function () {
   'use strict'
