@@ -3,7 +3,6 @@ function readLocalStorage() {
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
     try {
-      // cố gắng parse JSON nếu có
       const val = localStorage.getItem(key);
       out[key] = (() => {
         try { return JSON.parse(val); } catch(e) { return val; }
